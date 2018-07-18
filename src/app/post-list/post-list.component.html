@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Your Books</h2>
+    <div class="list-group">
+      <app-post-list-item 
+        *ngFor="let post of posts, let i = index"
+        [index]="i"></app-post-list-item>
+    </div>
+    <button class="btn btn-primary" (click)="onNewPost()" title="Add a new Post">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+  </div> 
+</div>

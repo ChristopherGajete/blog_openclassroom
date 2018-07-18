@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+
+<li [ngClass]="{
+  'list-group-item': true,
+  'list-group-item-success': loved === 'yes',
+  'list-group-item-danger': loved === 'no'
+}">
+<div>
+  <p style="text-align:right"> {{ post.created_at | date: 'short' }}</p>
+  <h3>
+    <b>{{ post.title }}</b>
+    <button class="btn btn-default pull-right" (click)="onDeletePost()" title="Delete the Post">
+        <span class="glyphicon glyphicon-minus"></span>
+    </button>
+  </h3>
+  <p>{{ post.content  }}</p>
+</div>
+<div>
+  <button class="btn btn-success" (click)="onIsLoved(true)" title="Like">
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+  </button>
+  <button class="btn btn-danger" (click)="onIsLoved(false)" title="Dislike">
+    <span class="glyphicon glyphicon-thumbs-down"></span>
+  </button>
+</div>
+</li>
